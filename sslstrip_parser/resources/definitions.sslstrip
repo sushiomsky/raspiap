@@ -1,0 +1,93 @@
+accounts.craigslist.org|CraigsList|inputEmailHandle|inputPassword
+digg.com|Digg|username|password
+en.wikipedia.org|Wikipedia|wpName|wpPassword
+en.wordpress.com|WordPress|log|pwd
+hi5.com|Hi5|email|password
+imgur.com|Imgur|username|password
+login.aeriagames.com|AeriaGames|edit[name]|edit[pass]
+login.capitalone.com|Capital One|user|password
+login.facebook.com|Facebook|email|pass
+login.live.com|Microsoft Live|login|passwd
+login.photobucket.com|PhotoBucket|loginForm[usernameemail]|loginForm[password]
+login.skype.com|Skype|username|password
+login.yahoo.com|Yahoo!|login|passwd
+my.screenname.aol.com|AIM|loginId|password
+my.t-mobile.com|T-Mobile|txtMSISDN|txtPassword
+mysprint.sprint.com|Sprint|USER|PASSWORD
+secure.imdb.com|IMDB|login|password
+secure.imvu.com|IMVU|avatarname|password
+secure.meetup.com|MeetUp|email|password
+secure.myspace.com|Myspace|Email_Textbox|Password_Textbox
+signin.ebay.com|Ebay|userid|pass
+slashdot.org|Slashdot|unickname|upasswd
+twitter.com|Twitter|session[username_or_email]|session[password]
+us.battle.net|BattleNet|accountName|password
+www.amazon.com|Amazon|email|password
+www.blogger.com|Blogger|Email|Passwd
+www.charter.com|Charter.com|txtMyAcctV3UserName|txtMyAcctV3Pass|txtHorWideZipCodeV3
+www.demonoid.com|Demonoid|nickname|password
+www.deviantart.com|DeviantArt|username|password
+www.formspring.me|FormSpring|username|password
+www.friendster.com|Friendster|email|password
+www.google.com|Google|Email|Passwd
+www.linkedin.com|LinkedIn|session_key|session_password
+www.mininova.org|MiniNova|name|password
+www.netflix.com|NetFlix|email|password1
+www.paypal.com|PayPal|login_email|login_password
+www.progressive.com|Progressive|user1|PWDpassword1
+www.reddit.com|Reddit|user|passwd
+www.stumbleupon.com|StumbleUpon|username|password
+AeriaGames login.aeriagames.com edit[name] edit[pass]
+AOL my.screenname.aol.com loginId password
+Battle us.battle.net accountName password
+Blogger blogger.com Email Passwd
+BoxNet submit1= login= password=
+CapitalOne login.capitalone.com user password
+Charter charter.com txtMyAcctV3UserName txtMyAcctV3Pass
+Comcast comcast.net user passwd
+CraigsList accounts.craigslist.org inputEmailHandle inputPassword
+Demonoid demonoid.com nickname password
+Digg digg.com username password
+EBAY signin.ebay.com userid pass
+ESPN espn.go.com username password
+FaceBook charset email persistent=
+FedEx fedex.com username password
+Formspring formspring.me username password
+Friendster friendster.com email password
+Gawker formToken= username password
+GMail gmail.com Email Passwd
+GoDaddy login_focus= loginname password
+Google google.com Email Passwd
+Hertz pageLoginFrom= loginId password
+HI5 hi5.com email password
+IMDB secure.imdb.com login password
+IMUGUR imgur.com username password
+IMVU secure.imvu.com avatarname password
+LinkedIn linkedin.com session_key session_password
+MiniNova mininova.org name password
+MonsterEmployer hiring.monster.com user= password=
+MySpace secure.myspace.com Email_Textbox Password_Textbox
+NetFlix netflix.com email password1
+PayPal paypal.com login_email login_password
+PhotoBucket login.photobucket.com loginForm[usernameemail] loginForm[password]
+Progressive progressive.com user1 PWDpassword1
+Reddit reddit.com user passwd
+SalesForce salesforce.com username pw
+Skype login.skype.com username password
+SlashDot slashdot.org unickname upasswd
+Sprint mysprint.sprint.com USER PASSWORD
+StumbleUpon stumbleupon.com username password
+TCBK TestJavaScript= txtUsername txtPassword
+TMobile my.t-mobile.com txtMSISDN txtPassword
+Twitter scribe_log username_or_email password
+UPS ups.com userid password
+VindiciaMail loginOp username= password=
+VolusionMail EVENTTARGET UserNameTextBox PasswordTextBox
+WellsFargo destination= userid password
+Wikipedia en.wikipedia.org wpName wpPassword
+WindowsLive PwdPad= login passwd
+Wordpress en.wordpress.com log pwd
+WorkSpace SUBMIT SJT_USER_NAME SJT_PASSWD
+YAHOOMail mail.yahoo.com login passwd
+YAHOO yahoo.com login Sign+In
+

