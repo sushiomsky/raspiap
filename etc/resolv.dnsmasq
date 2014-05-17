@@ -1,0 +1,4 @@
+domain localdomain
+search localdomain
+nameserver 81.173.194.76
+nameserver 8.8.8.8
