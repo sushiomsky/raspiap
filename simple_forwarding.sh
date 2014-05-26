@@ -14,6 +14,7 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
 iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
 
+echo "setup traffic shaping"
 #Traffic shaping
 tc qdisc add dev wlan0 root handle 1:0 htb default 10
 tc class add dev wlan0 parent 1:0 classid 1:10 htb rate 256kbps ceil 256kbps prio 0
