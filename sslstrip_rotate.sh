@@ -2,9 +2,12 @@
 
 date=`date "+%Y-%m-%dT%H:%M:%S"`
 
-#cd /root
-#./sslstrip_parser.py >> sslstrip_parser.out
+cd /usr/local/src/raspiap/sslstrip_parser
+nice -n 10 ./sslstrip_parser.py >> /var/log/sslstrip_parser.out
+
 killall -15 sslstrip
 sleep 3
-nice -n -5 sslstrip -f -w /var/log/sslstrip/dump-$date  2>&1 >> /var/log/sslstrip.log&
+nice -n -10 sslstrip -f -w /var/log/sslstrip/dump-$date  >> /var/log/sslstrip_daemon.log &
+rm sslstrip.log
+ln -s /var/log/sslstrip/dump-$date sslstrip.log
 
