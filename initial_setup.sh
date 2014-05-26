@@ -4,7 +4,7 @@ dpkg-reconfigure tzdata
 dpkg-reconfigure console-data
 dpkg-reconfigure locales
 apt-get -y install ca-certificates
-apt-get -y install wireless-tools
+#apt-get -y install wireless-tools
 apt-get -y install git-core curl
 #sudo curl -L --output /usr/bin/rpi-update https://raw.github.com/Hexxeh/rpi-update/master/rpi-update && sudo chmod +x /usr/bin/rpi-update
 #rpi-update
