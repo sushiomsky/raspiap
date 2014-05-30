@@ -13,4 +13,7 @@ wget http://archive.raspberrypi.org/debian/raspberrypi.gpg.key
 apt-key add raspberrypi.gpg.key
 apt-get update
 apt-get -y install raspi-config
-raspi-config
+
+wget https://raw.github.com/Hexxeh/rpi-update/master/rpi-update -O /usr/bin/rpi-update && sudo chmod +x /usr/bin/rpi-update 
+
+wget https://raw.githubusercontent.com/notro/rpi-source/master/rpi-source -O /usr/bin/rpi-source && sudo chmod +x /usr/bin/rpi-source && /usr/bin/rpi-source -q --tag-update
