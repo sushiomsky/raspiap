@@ -1,4 +1,0 @@
-use auxiliary/sniffer/psnuffle
-set TIMEOUT 100000
-run
-
