@@ -4,8 +4,30 @@ dpkg-reconfigure tzdata
 dpkg-reconfigure console-data
 dpkg-reconfigure locales
 apt-get -y install ca-certificates
-apt-get -y install git-core curl build-essential sudo
+apt-get -y install git-core curl build-essential sudo ffmpeg sox libsox-fmt-all autoconf automake cmake build-essential curl git-core mpd hostapd inadyn sslstrip mitmproxy aircrack-ng nmap ethtool wpasupplicant subversion usbutils 
 
+
+#PiFm & PiFmplay
+cd /usr/local/src/
+git clone https://github.com/rm-hull/pifm pifm
+cd pifm
+g++ -O3 -o pifm pifm.c
+chmod +x pifm
+cd /usr/local/sbin/
+ln -s /usr/local/src/pifm/pifm pifm
+
+cd /usr/local/src/
+git clone https://github.com/Mikael-Jakhelln/PiFMPlay pifmplay
+cd /usr/local/sbin/
+ln -s /usr/local/src/pifm/pifmplay pifmplay
+
+#OPenWifi Autoconnect
+cd /usr/local/bin/
+wget http://true-random.com/homepage/projects/wifi/freewifi_autoconnect.sh
+chmod +x freewifi_autoconnect.sh
+
+#sslstrip credential extractor
+git clone https://github.com/sushiomsky/logex
 
 
 echo "deb http://archive.raspberrypi.org/debian/ wheezy main" >> /etc/apt/sources.list
